@@ -3,6 +3,7 @@ package SpringSecond.a_controller;
 
 import SpringSecond.model.Employee;
 import SpringSecond.b_services.EmployeeService;
+import SpringSecond.model.UpdateEmployee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,6 +46,12 @@ public class RestEmployeeController {
     @DeleteMapping(path = "/employee-delete-employee/{id}")
     public boolean deleteEmployee(@PathVariable(name="id",required = true) String id){
         return  employeeService.deleteEmployee(id);
+
+    }
+
+    @PutMapping(path = "/employee-put-employee/{id}")
+    public Employee putEmployee(@PathVariable(name="id") String id, @RequestBody UpdateEmployee request){
+        return  employeeService.putEmployee(id,request);
 
     }
 

@@ -2,9 +2,9 @@ package SpringSecond.b_services;
 
 import SpringSecond.model.Employee;
 import SpringSecond.c_repository.EmployeeRepository;
+import SpringSecond.model.UpdateEmployee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -42,6 +42,12 @@ public class EmployeeService {
     public boolean deleteEmployee(String id){
 
         return employeeRepository.deleteEmployee(id);
+
+    }
+
+    public Employee putEmployee(String id, UpdateEmployee request){
+
+        return employeeRepository.putEmployee(id,request);
 
     }
 
