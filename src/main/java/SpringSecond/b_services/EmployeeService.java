@@ -4,6 +4,7 @@ import SpringSecond.model.Employee;
 import SpringSecond.c_repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -32,7 +33,19 @@ public class EmployeeService {
         return employeeRepository.getEmployeeWithParams(firstName, lastName);
     }
 
+    public Employee saveEmployee(Employee employee){
+
+        return employeeRepository.saveEmployee(employee);
+
+    }
+
+    public boolean deleteEmployee(String id){
+
+        return employeeRepository.deleteEmployee(id);
+
+    }
 
 
 
 }
+
